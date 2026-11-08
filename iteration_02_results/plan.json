@@ -1,0 +1,30 @@
+{
+  "hypotheses": [
+    "original_EMA",
+    "hysteresis_0.005",
+    "hysteresis_0.01",
+    "confirmation_3",
+    "confirmation_6",
+    "channel_120",
+    "channel_240",
+    "breakout_trail_3.0",
+    "breakout_trail_5.0",
+    "ladder_daily",
+    "ladder_weekly",
+    "volgate_0.3",
+    "volgate_0.45",
+    "pullback_1.0",
+    "pullback_2.0",
+    "reentry_12",
+    "reentry_30"
+  ],
+  "count": 17,
+  "end_exclusive": "2026-11-06",
+  "hashes": {
+    "BTCUSDT": "ad6743ff9f147d13a190830c87e4b9ed8f7a5fff96383c1b15ef38b0de6d630e",
+    "ETHUSDT": "adc70e5b7a7e8e9a39597e5da6eae7b086d1de154b7a54f99a8dbaf7729686ff"
+  },
+  "selection": "Training stress-cost Sharpe, positive CAGR, max drawdown above -50%; three-year trailing annual selection of top 3 distinct families.",
+  "fill": "Next 4h open; 15bp total cost per side, stress30bp; long spot <=100%; cash zero return.",
+  "warning": "Design uses previously inspected history. No true new holdout. No extra parameter tuning after batch results."
+}

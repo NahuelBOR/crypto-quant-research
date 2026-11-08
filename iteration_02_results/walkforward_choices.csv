@@ -1,0 +1,5 @@
+year,models
+2023,channel_240;hysteresis_0.01;reentry_12
+2024,channel_240;volgate_0.3;hysteresis_0.01
+2025,volgate_0.3;reentry_30;channel_120
+2026,volgate_0.3;reentry_30;hysteresis_0.005

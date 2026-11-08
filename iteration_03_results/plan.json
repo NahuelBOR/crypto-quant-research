@@ -1,0 +1,22 @@
+{
+  "reason": "Combine two promising mechanisms from iteration02; exploratory post-selection.",
+  "parameters": {
+    "confirmation_bars": [
+      3,
+      6
+    ],
+    "annual_vol_sizing": [
+      0.3,
+      0.45
+    ]
+  },
+  "selection": "Highest BTC 2020-22 stress-cost Sharpe among four new combinations. Transfer frozen to ETH.",
+  "cost_per_side": [
+    0.0015,
+    0.003
+  ],
+  "lag_bars": [
+    1,
+    2
+  ]
+}

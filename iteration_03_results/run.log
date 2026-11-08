@@ -1,0 +1,34 @@
+               asset           case     CAGR   Sharpe     MaxDD      Vol
+             BTCUSDT           base 0.327526 1.279496 -0.253510 0.244542
+             ETHUSDT           base 0.243220 0.982875 -0.241243 0.253502
+BTC_ETH_initial50_50           base 0.287337 1.238385 -0.234699 0.223977
+             BTCUSDT        cost_x2 0.288851 1.156944 -0.274256 0.244965
+             ETHUSDT        cost_x2 0.215227 0.892505 -0.255342 0.253701
+BTC_ETH_initial50_50        cost_x2 0.253577 1.118507 -0.248765 0.224270
+             BTCUSDT       delay_4h 0.341437 1.321645 -0.231852 0.244654
+             ETHUSDT       delay_4h 0.222297 0.920506 -0.240069 0.251754
+BTC_ETH_initial50_50       delay_4h 0.285792 1.234903 -0.211382 0.223561
+             BTCUSDT cost_and_delay 0.302339 1.199661 -0.255618 0.244912
+             ETHUSDT cost_and_delay 0.194769 0.829523 -0.254637 0.251958
+BTC_ETH_initial50_50 cost_and_delay 0.251840 1.114157 -0.225749 0.223808
+      strategy  year  return_actual
+       BTCUSDT  2023       0.783848
+       BTCUSDT  2024       0.658283
+       BTCUSDT  2025      -0.058400
+       BTCUSDT  2026       0.067639
+       ETHUSDT  2023       0.204493
+       ETHUSDT  2024       0.372509
+       ETHUSDT  2025       0.176903
+       ETHUSDT  2026       0.187506
+portfolio_base  2023       0.494171
+portfolio_base  2024       0.543098
+portfolio_base  2025       0.025958
+portfolio_base  2026       0.116934
+BENCHMARKS             reference  allocation     CAGR   Sharpe     MaxDD      Vol
+         passive50_50    1.000000 0.355889 0.865782 -0.575768 0.489350
+ risk_reduced_passive    0.263755 0.106987 0.820291 -0.196128 0.135009
+half_crypto_half_cash    0.500000 0.195629 0.834180 -0.343133 0.252233
+DIFFERENCES             reference  mean_ann      lo95     hi95
+         passive50_50 -0.146301 -0.454249 0.199208
+ risk_reduced_passive  0.166623 -0.019203 0.380088
+half_crypto_half_cash  0.066962 -0.112073 0.262926

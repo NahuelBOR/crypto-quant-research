@@ -1,0 +1,30 @@
+[
+  {
+    "symbol": "BTCUSDT",
+    "time": "2023-01-01 00:00:00+00:00",
+    "matched": true,
+    "cached_close": 16533.04,
+    "api_close": 16533.04
+  },
+  {
+    "symbol": "BTCUSDT",
+    "time": "2026-11-05 20:00:00+00:00",
+    "matched": true,
+    "cached_close": 76088.01,
+    "api_close": 76088.01
+  },
+  {
+    "symbol": "ETHUSDT",
+    "time": "2023-01-01 00:00:00+00:00",
+    "matched": true,
+    "cached_close": 1194.04,
+    "api_close": 1194.04
+  },
+  {
+    "symbol": "ETHUSDT",
+    "time": "2026-11-05 20:00:00+00:00",
+    "matched": true,
+    "cached_close": 2238.01,
+    "api_close": 2238.01
+  }
+]

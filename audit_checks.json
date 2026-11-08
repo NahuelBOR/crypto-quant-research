@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "flat-price fee identity PASS",
+    "passive units identity PASS",
+    "legacy weekly positions zero outside Monday CONFIRMED",
+    "EMA4h future-perturbation PASS",
+    "vote_daily future-perturbation PASS",
+    "ETH_crash future-perturbation PASS"
+  ],
+  "data": [
+    {
+      "symbol": "BTCUSDT",
+      "rows": 15005,
+      "gaps": 1,
+      "bad_ohlc": 0,
+      "end": "2026-11-05 20:00:00+00:00",
+      "sha256": "ad6743ff9f147d13a190830c87e4b9ed8f7a5fff96383c1b15ef38b0de6d630e"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "rows": 15005,
+      "gaps": 1,
+      "bad_ohlc": 0,
+      "end": "2026-11-05 20:00:00+00:00",
+      "sha256": "adc70e5b7a7e8e9a39597e5da6eae7b086d1de154b7a54f99a8dbaf7729686ff"
+    }
+  ],
+  "end_exclusive": "2026-11-06"
+}
