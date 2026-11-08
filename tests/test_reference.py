@@ -1,8 +1,12 @@
 import unittest
+import sys
+from pathlib import Path
 import numpy as np
 import pandas as pd
 from quantbot.strategy import targets
 from quantbot.ledger import replay
+RESEARCH=Path(__file__).resolve().parents[1]/'research'
+sys.path.insert(0,str(RESEARCH))
 from iteration_03 import candidates
 from audit_backtests import simulate
 from quantbot.data import validate
@@ -10,7 +14,7 @@ from quantbot.data import validate
 class ReferenceTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.d=pd.read_csv('btcusdt_spot_4h.csv',parse_dates=['open_time']).set_index('open_time').sort_index()
+        cls.d=pd.read_csv(RESEARCH/'btcusdt_spot_4h.csv',parse_dates=['open_time']).set_index('open_time').sort_index()
         cls.d.index=pd.to_datetime(cls.d.index,utc=True)
         cls.d=cls.d.loc[cls.d.index<'2026-11-06']
     def test_signals_match_frozen_research(self):

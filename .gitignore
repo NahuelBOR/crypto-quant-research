@@ -8,3 +8,4 @@ __pycache__/
 *.key
 .pytest_cache/
 replay_output/
+notas_locales/

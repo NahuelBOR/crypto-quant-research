@@ -1,43 +1,51 @@
-# Investigación de estrategias cuantitativas cripto
+# Crypto Quant Research
 
-Proyecto de investigación reproducible para BTC/ETH spot. **Estado: experimental, sin operaciones reales y sin rentabilidad futura demostrada.** Los backtests son retrospectivos; sus resultados no constituyen una muestra ciega ni una promesa de rendimiento.
+Investigación de estrategias sistemáticas para BTC y ETH spot, con datos históricos, pruebas y herramientas para reproducir los resultados.
 
-## Candidata congelada
+## Estrategia de referencia
 
-`confirm3_vol0.3` combina una tendencia de 4 horas confirmada durante tres velas con un tamaño ajustado semanalmente por volatilidad. Usa dos carteras virtuales inicialmente iguales para BTC y ETH; no redistribuye entre ellas y no usa shorts ni apalancamiento. La regla exacta está en [ITERACION_RESULTADO.md](ITERACION_RESULTADO.md) y sus parámetros en [candidate_frozen.json](iteration_03_results/candidate_frozen.json).
+La estrategia `confirm3_vol0.3` utiliza velas de cuatro horas. La condición de tendencia es EMA20 > EMA100 y cierre > SMA200; se confirma durante tres velas consecutivas para entrar o salir. El tamaño se ajusta semanalmente según la volatilidad reciente, con exposición objetivo máxima del 100% y efectivo cuando la señal está apagada.
 
-La investigación original mostró resultados históricos positivos, sensibles a costos y selección. El intervalo de comparación con una referencia sencilla incluye cero. No interpretar los datos históricos como un resultado esperado.
+La simulación mantiene carteras independientes de BTC y ETH, con un reparto inicial 50/50. Es una estrategia de investigación: no utiliza apalancamiento ni envía órdenes reales.
 
-## Instalación y comprobación
+## Instalación
 
-Requiere Python 3.10 o superior. Desde esta carpeta:
+Requiere Python 3.10 o superior. En PowerShell:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+```
+
+## Uso
+
+Ejecutar las pruebas:
+
+```powershell
 python -m unittest discover -s tests -v
+```
+
+Reproducir las señales y transacciones simuladas para BTC y ETH:
+
+```powershell
 python replay_reference.py --start 2023-01-01 --end 2026-11-06
 ```
 
-Las pruebas contrastan la señal nueva contra la investigación congelada, verifican que el futuro no altere señales previas y comprueban contabilidad y paridad con el motor auditado. Utilizan los CSV históricos incluidos. Los scripts históricos de descarga acceden a Binance; revise su código antes de ejecutarlos.
+El final del período es exclusivo. Los archivos de operaciones y saldos se guardan en `replay_output/`. El equity final está marcado a mercado y no incluye una venta hipotética de cierre.
 
-## Componentes
+## Estructura
 
-- `quantbot/strategy.py`: señal congelada, sin red ni órdenes.
-- `quantbot/ledger.py`: replay spot con efectivo, unidades y registro de transacciones; no envía órdenes.
-- `quantbot/data.py` y `replay_reference.py`: validación OHLCV y replay local por activo. El final del período es exclusivo; el valor final es marcado a mercado y no incluye una venta hipotética de cierre. Los CSV de salida se escriben en `replay_output/`.
-- `tests/`: comprobaciones del comportamiento de referencia.
-- `audit_backtests.py` y `audit_*.csv`: motor independiente y resultados de auditoría.
-- `iteration_02.py`, `iteration_03.py`, `iteration_03_portfolio.py`: hipótesis y resultados de las iteraciones.
-- `*_spot_4h.csv`, otros CSV y carpetas `iteration_*_results`: datos y resultados históricos para reproducir la investigación.
-- [PLAN_MEJORA_BOT.md](PLAN_MEJORA_BOT.md): hoja de ruta, incluyendo paper trading, ejecución y controles pendientes.
-- [PROGRESO.md](PROGRESO.md): pasos completados y pendientes de implementación.
-- [REVISION_AUDITORIA.md](REVISION_AUDITORIA.md): errores detectados y limitaciones de las pruebas previas.
-- [INFORME_BACKTEST.md](INFORME_BACKTEST.md): registro de intentos anteriores; contiene resultados provisionales y debe leerse junto a la auditoría.
+```text
+quantbot/              Señales, validación de datos y contabilidad spot
+tests/                 Pruebas de referencia y contabilidad
+research/              Datos históricos, experimentos y resultados
+replay_reference.py    Replay local de la estrategia de referencia
+requirements.txt       Dependencias
+```
 
-## Estado y siguientes pasos
+En `research/iteration_03_results/` están los parámetros y resultados de la estrategia de referencia. El resto de `research/` conserva pruebas históricas, incluidas variantes descartadas y motores anteriores con limitaciones conocidas. Algunos scripts de descarga acceden a Binance y pueden sobrescribir datos; revisar sus instrucciones antes de ejecutarlos.
 
-Se separaron la señal y el ledger del código de exploración y se agregaron comprobaciones de paridad y contabilidad. Faltan persistencia y reinicio, ledger completo de cada backtest, validación de datos en producción, costos observados, reconciliación y modo sombra. No hay adaptador de órdenes reales ni credenciales en el proyecto. Antes de evaluar cualquier despliegue, completar las puertas de avance del plan.
+## Alcance
 
-Los datos tienen un hueco de cuatro horas en febrero de 2020. Las marcas y costos usados en simulación no representan necesariamente precios ejecutables. Los archivos de investigación anteriores se conservan para trazabilidad, no como estrategias listas para operar.
+Los backtests son retrospectivos y no demuestran rentabilidad futura. Los costos y precios de ejecución son supuestos; el historial de BTC y ETH tiene un hueco de cuatro horas en febrero de 2020. Quedan pendientes el estado persistente, la reconciliación, el paper trading en tiempo real y la medición de costos observados. No hay credenciales ni adaptador de órdenes reales en este proyecto.
