@@ -46,6 +46,10 @@ requirements.txt       Dependencias
 
 En `research/iteration_03_results/` están los parámetros y resultados de la estrategia de referencia. El resto de `research/` conserva pruebas históricas, incluidas variantes descartadas y motores anteriores con limitaciones conocidas. Algunos scripts de descarga acceden a Binance y pueden sobrescribir datos; revisar sus instrucciones antes de ejecutarlos.
 
+La prueba de 2022 está en `research/backtest_2022_results/`. Para volver a descargar las velas de 2021–2022 y recalcularla: `python research/backtest_2022.py`. El año 2021 se usa para inicializar indicadores; 2022 ya participó en la selección de la estrategia y no es una muestra independiente.
+
+En la simulación de 2022, la cartera de referencia perdió 7,8% y tuvo una caída máxima diaria de 12,7%, con un costo supuesto de 15 pb por operación. Una referencia pasiva calibrada con la volatilidad de 2021 perdió 19,9% y tuvo una caída máxima de 22,9%. Son resultados históricos sujetos a las limitaciones del modelo, no una prueba de ausencia de sobreajuste.
+
 ## Alcance
 
 Los backtests son retrospectivos y no demuestran rentabilidad futura. Los costos y precios de ejecución son supuestos; el historial de BTC y ETH tiene un hueco de cuatro horas en febrero de 2020. Quedan pendientes el estado persistente, la reconciliación, el paper trading en tiempo real y la medición de costos observados. No hay credenciales ni adaptador de órdenes reales en este proyecto.

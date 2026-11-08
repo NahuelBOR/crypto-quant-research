@@ -1,0 +1,30 @@
+{
+  "source": "https://api.binance.com/api/v3/klines",
+  "downloaded_utc": "2026-11-08T02:57:29.094738+00:00",
+  "interval": "4h",
+  "warmup": "2021-01-01 to 2021-12-31 UTC",
+  "backtest": "2022-01-01 to 2022-12-31 UTC",
+  "risk_benchmark_crypto_fraction": 0.2547567784609323,
+  "risk_benchmark_calibration": "2021 using prior cached data for indicator warm-up",
+  "note": "2022 was part of model selection; same exchange is not independent validation",
+  "checks": {
+    "BTCUSDT": {
+      "candles_2021_2022": 4380,
+      "candles_2022": 2190,
+      "missing": 0,
+      "different_ohlcv_values": 0,
+      "different_targets": 0,
+      "sha256": "e53250af6bf8ac994afc517d304ed59f82acfb0f949c5fe199671504ff9c575b",
+      "independent_ledger_matches": true
+    },
+    "ETHUSDT": {
+      "candles_2021_2022": 4380,
+      "candles_2022": 2190,
+      "missing": 0,
+      "different_ohlcv_values": 0,
+      "different_targets": 0,
+      "sha256": "e596fe4481d8a127f6d1e6e5ff0b4f312417e9fd669e58fbc45fe475cac195a6",
+      "independent_ledger_matches": true
+    }
+  }
+}

@@ -50,5 +50,13 @@ class ReferenceTests(unittest.TestCase):
         d=self.d.iloc[:4].copy();d.iloc[0,d.columns.get_loc('low')]=d.iloc[0]['high']+1
         with self.assertRaises(ValueError):validate(d)
         d=self.d.iloc[[0,1,3]].copy();self.assertEqual(len(validate(d)),1)
+    def test_2022_redownload_matches_cached_btc(self):
+        fresh=pd.read_csv(RESEARCH/'backtest_2022_results'/'btcusdt_spot_4h_2021_2022.csv',parse_dates=['open_time']).set_index('open_time')
+        fresh.index=pd.to_datetime(fresh.index,utc=True)
+        old=self.d.loc[(self.d.index>='2022-01-01')&(self.d.index<'2023-01-01')]
+        new=fresh.loc[(fresh.index>='2022-01-01')&(fresh.index<'2023-01-01')]
+        self.assertTrue(old.index.equals(new.index))
+        np.testing.assert_allclose(old[['open','high','low','close','volume']],new[['open','high','low','close','volume']],rtol=1e-10,atol=1e-10)
+        np.testing.assert_allclose(targets(self.d).reindex(new.index),targets(fresh).reindex(new.index))
 
 if __name__=='__main__':unittest.main()
