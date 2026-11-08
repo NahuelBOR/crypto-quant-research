@@ -32,6 +32,7 @@ Las pruebas contrastan la señal nueva contra la investigación congelada, verif
 - `iteration_02.py`, `iteration_03.py`, `iteration_03_portfolio.py`: hipótesis y resultados de las iteraciones.
 - `*_spot_4h.csv`, otros CSV y carpetas `iteration_*_results`: datos y resultados históricos para reproducir la investigación.
 - [PLAN_MEJORA_BOT.md](PLAN_MEJORA_BOT.md): hoja de ruta, incluyendo paper trading, ejecución y controles pendientes.
+- [PROGRESO.md](PROGRESO.md): pasos completados y pendientes de implementación.
 - [REVISION_AUDITORIA.md](REVISION_AUDITORIA.md): errores detectados y limitaciones de las pruebas previas.
 - [INFORME_BACKTEST.md](INFORME_BACKTEST.md): registro de intentos anteriores; contiene resultados provisionales y debe leerse junto a la auditoría.
 
