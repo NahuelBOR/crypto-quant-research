@@ -48,6 +48,8 @@ En `research/iteration_03_results/` están los parámetros y resultados de la es
 
 La prueba de 2022 está en `research/backtest_2022_results/`. Para volver a descargar las velas de 2021–2022 y recalcularla: `python research/backtest_2022.py`. El año 2021 se usa para inicializar indicadores; 2022 ya participó en la selección de la estrategia y no es una muestra independiente.
 
+También está disponible la prueba de 2018–2019 en `research/backtest_2018_2019_results/`; se ejecuta con `python research/backtest_2018_2019.py` y descarga datos desde agosto de 2017 para inicializar indicadores. Con costos supuestos de 0,15% por lado, la cartera obtuvo un 26,5% acumulado (−13,5% en 2018 y +46,2% en 2019). Hay 15 velas faltantes por activo; los indicadores cuentan velas disponibles y la ejecución pasa a la apertura disponible siguiente. Este período también se examinó con otras reglas durante la investigación, por lo que no es completamente ciego.
+
 En la simulación de 2022, la cartera de referencia perdió 7,8% y tuvo una caída máxima diaria de 12,7%, con un costo supuesto de 15 pb por operación. Una referencia pasiva calibrada con la volatilidad de 2021 perdió 19,9% y tuvo una caída máxima de 22,9%. Son resultados históricos sujetos a las limitaciones del modelo, no una prueba de ausencia de sobreajuste.
 
 ## Alcance
