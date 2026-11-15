@@ -1,0 +1,15 @@
+{
+  "source": "https://query1.finance.yahoo.com/v8/finance/chart/SPY",
+  "downloaded_utc": "2026-11-15T03:11:10.611545+00:00",
+  "first": "1993-01-29",
+  "last": "2026-11-13",
+  "rows": 8507,
+  "sha256": "5e41b5a6bd11a0631be9206426c9b8bdc154bc1c2b66621e1d6b336adeebcd46",
+  "adjustment": "OHLC scaled by Yahoo adjusted_close / close: proxy for reinvested dividends; not historical executable prices",
+  "calendar": "US sessions; holidays not filled; Fridays only for sizing",
+  "target": "EMA3 > EMA12 and close > SMA24; weekly 30% volatility target over 21 trading sessions rounded to 25%; one session confirmation",
+  "fee_per_side": 0.0015,
+  "initial_investment": "fresh cash at each period start",
+  "cash_yield": 0,
+  "ledger_parity": true
+}
