@@ -78,6 +78,16 @@ python research/sector_rotation.py --signal 2026-11-02 --rule equal_sectors
 
 El último comando muestra los pesos de la sesión indicada para simulación. Las series de resultados se guardan en `research/sector_rotation_results/`. La primera ejecución descarga los precios y los archivos de industrias. Las siguientes reutilizan la copia en `replay_output/sector_prices/`. [ETF sectoriales de State Street](https://www.ssga.com/us/en/intermediary/capabilities/equities/sector-investing/select-sector-etfs) · [Datos de Kenneth French](https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html)
 
+## Prueba de 2020–2021
+
+La regla original dio +271,8% acumulado (+141,7% en 2020 y +53,8% en 2021), con una caída máxima diaria de 12,4%. Con el doble de costos y una demora adicional de cuatro horas, el retorno acumulado fue +254,0%. Mantener BTC y ETH rindió +1.639,1%, con una caída máxima de 58,8%. La cartera con 25% en cripto y 75% en efectivo rindió +130,9%, con una caída máxima de 17,1%.
+
+Se usan velas spot de Binance de cuatro horas, historial anterior para inicializar indicadores y 0,15% de costo base por lado. Las dos cuentas parten 50/50, continúan entre los años y no se rebalancean entre sí. Falta una vela por activo el 19 de febrero de 2020, sin relleno de precios. Ambos años ya formaron parte de la muestra de selección, por lo que esta corrida es descriptiva.
+
+```powershell
+python research/backtest_2020_2021.py
+```
+
 ## Alcance
 
 Los backtests son retrospectivos y no demuestran rentabilidad futura. Los costos y precios de ejecución son supuestos; el historial de BTC y ETH tiene un hueco de cuatro horas en febrero de 2020. Quedan pendientes el estado persistente, la reconciliación, el paper trading en tiempo real y la medición de costos observados. No hay credenciales ni adaptador de órdenes reales en este proyecto.
